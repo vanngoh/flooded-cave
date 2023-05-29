@@ -44,8 +44,13 @@ def solution(x):
                 visited.add((new_row, new_col))
 
         # Wrong bet on the move, re-simulate
-        if queue_length > len(queue):
+        if queue_length >= len(queue):
             is_resimulate = True
+
+        # for x in map:
+        #     print(x)
+        # print(visited, " | ", queue)
+        # print()
 
     # Mission impossible and I'm not Tom Cruise
     return -1
@@ -179,6 +184,32 @@ if __name__ == "__main__":
             [0, 0, 0, 1, 1, 0],
             [0, 1, 1, 1, 1, 0],
             [0, 0, 0, 0, 0, 0],
+        ] 
+    ) == 3
+
+    assert solution(
+        [
+            [0, 0, 0, 0, 0, 0, 0],
+            [0, 1, 0, 1, 1, 0, 0],
+            [0, 0, 0, 0, 0, 1, 0],
+            [0, 1, 0, 1, 0, 1, 0],
+            [0, 0, 1, 0, 0, 1, 0],
+            [0, 0, 1, 2, 1, 1, 0],
+            [0, 1, 1, 1, 1, 1, 0],
+            [0, 0, 0, 0, 0, 0, 0]
+        ]
+    ) == 5
+
+    assert solution(
+        [
+            [0, 0, 0, 0, 0, 0, 0],
+            [0, 1, 1, 0, 1, 0, 0],
+            [0, 0, 0, 0, 0, 1, 0],
+            [0, 1, 0, 1, 0, 1, 0],
+            [0, 0, 1, 0, 0, 1, 0],
+            [0, 0, 1, 2, 1, 1, 0],
+            [0, 1, 1, 1, 1, 1, 0],
+            [0, 0, 0, 0, 0, 0, 0]
         ]
     ) == 3
 
